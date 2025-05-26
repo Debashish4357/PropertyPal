@@ -13,6 +13,9 @@ function Layout() {
       <div className="content">
         <Outlet/>
       </div>
+
+
+      
     </div>
   );
 }
