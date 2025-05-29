@@ -9,6 +9,10 @@ export const AuthContextProvider = ({children}) => {
     );
 
     const updateUser = (data) => {
+        if (!data) {
+            SetCurrentUser(null);
+            return;
+        }
         const { token, ...user } = data;
         SetCurrentUser(user);
     }
