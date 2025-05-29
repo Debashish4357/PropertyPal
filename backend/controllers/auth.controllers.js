@@ -64,12 +64,7 @@ try{
 
 const {password: userPassword, ...userInfo} = user
    
-    res.cookie("token", token, {
-        httpOnly: true,
-        secure: true,
-        sameSite: 'none',
-        maxAge: age
-    }).status(200).json(userInfo)
+    res.status(200).json({ token, ...userInfo });
 
 }catch(err){
     console.log(err)

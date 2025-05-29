@@ -28,6 +28,7 @@ function Login() {
       password
     }) 
 
+    localStorage.setItem('token', res.data.token);
     updateUser(res.data)
     navigate("/")
 

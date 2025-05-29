@@ -5,26 +5,21 @@ axios.defaults.withCredentials = true;
 
 const apiRequest = axios.create({
     baseURL: "https://propertypal-wbh0.onrender.com/api",
-    withCredentials: true,
     headers: {
         'Content-Type': 'application/json',
-    },
-    // Add these options to ensure cookies are handled properly
-    withCredentials: true,
-    xsrfCookieName: 'token',
-    xsrfHeaderName: 'X-CSRF-Token'
+    }
 });
 
-// Add request interceptor to ensure credentials are sent
+// Add a request interceptor to attach the token
 apiRequest.interceptors.request.use(
     (config) => {
-        // Ensure credentials are included in every request
-        config.withCredentials = true;
+        const token = localStorage.getItem('token');
+        if (token) {
+            config.headers['Authorization'] = `Bearer ${token}`;
+        }
         return config;
     },
-    (error) => {
-        return Promise.reject(error);
-    }
+    (error) => Promise.reject(error)
 );
 
 // Add response interceptor for debugging
