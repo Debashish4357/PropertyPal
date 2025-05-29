@@ -19,7 +19,9 @@ const httpServer = createServer(app);
 // Initialize Socket.IO
 const io = initializeSocket(httpServer);
 
-const allowedOrigins = ["http://localhost:5173","https://wonderful-panda-795472.netlify.app/"];
+const allowedOrigins = [
+  "https://wonderful-panda-795472.netlify.app"
+];
 
 process.on("uncaughtException", function (err) {
   console.log(err);
