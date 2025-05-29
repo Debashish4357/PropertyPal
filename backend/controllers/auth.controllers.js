@@ -68,8 +68,7 @@ const {password: userPassword, ...userInfo} = user
         httpOnly: true,
         secure: true,
         sameSite: 'none',
-        maxAge: age,
-        domain: '.onrender.com'  // This allows the cookie to work across subdomains
+        maxAge: age
     }).status(200).json(userInfo)
 
 }catch(err){
