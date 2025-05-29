@@ -19,7 +19,7 @@ const httpServer = createServer(app);
 // Initialize Socket.IO
 const io = initializeSocket(httpServer);
 
-const allowedOrigins = ["http://localhost:5174", "http://localhost:5173"];
+const allowedOrigins = ["http://localhost:5173"];
 
 process.on("uncaughtException", function (err) {
   console.log(err);

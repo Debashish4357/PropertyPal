@@ -64,10 +64,12 @@ try{
 
 const {password: userPassword, ...userInfo} = user
    
-    res.cookie("token",token,{
-        httpOnly:true,
-        // secure:true
+    res.cookie("token", token, {
+        httpOnly: true,
+        secure: true,
+        sameSite: 'none',
         maxAge: age,
+        domain: '.onrender.com'  // This allows the cookie to work across subdomains
     }).status(200).json(userInfo)
 
 }catch(err){
