@@ -21,7 +21,9 @@ const getUser = (userId) => {
 export const initializeSocket = (server) => {
     const io = new Server(server, {
         cors: {
-            origin: ["http://localhost:5174", "http://localhost:5173"],
+            origin: [
+                "https://wonderful-panda-795472.netlify.app"
+            ],
             methods: ["GET", "POST"],
             credentials: true
         }
