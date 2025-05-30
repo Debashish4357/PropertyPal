@@ -117,6 +117,6 @@ export const readChat= async (req, res)=>{
     }
     catch(err){
         console.log(err)
-        req.status(500).json({message:"Failed to Get Chats"})
+        res.status(500).json({message:"Failed to Get Chats"})
     }
 }
