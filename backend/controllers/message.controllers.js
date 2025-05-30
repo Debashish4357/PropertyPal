@@ -39,6 +39,6 @@ const text = req.body.text
     }
     catch(err){
         console.log(err)
-        req.status(500).json({message:"Failed to add message"})
+        res.status(500).json({message:"Failed to add message"})
     }
 }
